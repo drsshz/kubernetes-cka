@@ -1,0 +1,27 @@
+apiVersion: v1
+clusters:
+- cluster:
+    server: https://1.2.3.4.
+  name: development
+- cluster:
+    server: https://5.6.7.8
+  name: production
+contexts:
+- context:
+    cluster: development
+    namespace: frontend
+    user: dev
+  name: dev-frontend
+- context:
+    cluster: production
+    namespace: frontend
+    user: dev
+  name: prod-frontend
+current-context: prod-frontend
+kind: Config
+preferences: {}
+users:
+- name: experimenter
+  user:
+    password: some-password
+    username: dev

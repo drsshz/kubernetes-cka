@@ -1,0 +1,16 @@
+apiVersion: gateway.networking.k8s.io/v1
+kind: HTTPRoute
+metadata:
+  name: http-route-echo
+spec:
+  parentRefs:
+  - name: gw-nginx
+  rules:
+  - matches:
+      - path:
+          type: PathPrefix
+          value: /
+    backendRefs:
+    - name: gw-deploy-svc 
+      port: 80
+

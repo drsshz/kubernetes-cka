@@ -1,0 +1,13 @@
+rules:
+  - matches:
+    - path:
+      - type: PathPrefix
+        value: /
+      - type: PathPrefix
+        value: /deals
+    backendRefs:
+    - name: api-svc
+      port: 80
+
+    backendRefs:
+

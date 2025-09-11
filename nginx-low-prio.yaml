@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-low-prio
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: nginx-low-prio
+  template:
+    metadata:
+      labels:
+        app: nginx-low-prio
+    spec:
+      priorityClassName: "low-priority"
+      containers:
+      - image: nginx
+        name: nginx
+        resources:
+          limits:
+            cpu: "300m"
+            memory: "100Mi"
+

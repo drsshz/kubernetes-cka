@@ -1,0 +1,6 @@
+apiVersion: testdevops.com/v1
+kind: Hello
+metadata:
+  name: hello
+spec:
+  text: "Hello World"

@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: nginx-vpa-dep
+  name: nginx-vpa-dep
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: nginx-vpa-dep
+  template:
+    metadata:
+      labels:
+        app: nginx-vpa-dep
+    spec:
+      containers:
+      - image: nginx
+        name: nginx
+        resources:
+          requests:
+            cpu: 50m
+            memory: 50Mi
