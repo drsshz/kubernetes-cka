@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  labels:
+    app: test-deploy
+  name: test-deploy
+spec:
+  replicas: 10
+  selector:
+    matchLabels:
+      app: test-deploy
+  template:
+    metadata:
+      labels:
+        app: test-deploy
+    spec:
+      containers:
+      - image: nginx
+        name: nginx
+      tolerations:
+      - key: "key"
+        operator: "Exists"
+        effect: "NoSchedule"
