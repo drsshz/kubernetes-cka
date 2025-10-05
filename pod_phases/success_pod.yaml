@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: success-pod
+spec:
+  containers:
+  - command:
+    - echo
+    - hello world
+    image: nginx
+    name: success-pod
