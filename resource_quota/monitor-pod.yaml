@@ -1,0 +1,17 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: monitor-pod
+spec:
+  containers:
+  - image: alpine/curl
+    name: test-pod
+    resources:
+      requests:
+        memory: 10Mi
+      limits:
+        memory: 10Mi
+    command:
+      - sleep
+    args:
+      - infinity

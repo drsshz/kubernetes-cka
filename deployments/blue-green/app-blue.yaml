@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-app-blue
+spec:
+  replicas: 10
+  selector:
+    matchLabels:
+      app: my-app
+      version: blue
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: my-app
+        version: blue
+    spec:
+      containers:
+        - image: nginx:1.21
+          name: nginx

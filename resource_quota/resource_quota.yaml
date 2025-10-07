@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ResourceQuota
+metadata:
+  name: my-quote
+  namespace: dev
+spec:
+  hard:
+    requests.memory: 512Mi
+    limits.memory: 512Mi
+

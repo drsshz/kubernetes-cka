@@ -1,0 +1,28 @@
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: "2025-10-07T08:56:08Z"
+  labels:
+    app: mydeploy
+  name: mydeploysvc
+  namespace: default
+  resourceVersion: "373494"
+  uid: 7a10072b-4c4f-41f3-897f-fe2de362715a
+spec:
+  clusterIP: 10.43.176.230
+  clusterIPs:
+  - 10.43.176.230
+  internalTrafficPolicy: Cluster
+  ipFamilies:
+  - IPv4
+  ipFamilyPolicy: SingleStack
+  ports:
+  - port: 80
+    protocol: TCP
+    targetPort: 8080
+  selector:
+    app: mydeploy
+  sessionAffinity: None
+  type: ClusterIP
+status:
+  loadBalancer: {}
